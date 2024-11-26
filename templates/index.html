@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer's Risk Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://static.scientificamerican.com/sciam/cache/file/5D75774D-B12D-4D87-8770F49C15DD3BCC_source.jpg?w=1200');
+            background-size: cover;  /* Ensures the image covers the full background */
+            background-position: center center;  /* Centers the image */
+            background-repeat: no-repeat;  /* Ensures the image doesn't repeat */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container {
+            margin-top: 50px;
+            height: calc(100vh - 50px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-control {
+            border-radius: 10px;
+            box-shadow: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .dropdown {
+            width: 100%;
+        }
+        .row-gap-2 > .col-md-6 {
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card p-4">
+        <h1>Alzheimer's Risk Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="input-group">
+                <span class="input-group-text">Name</span>
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Age</span>
+                        <input type="number" name="age" class="form-control" placeholder="Enter your age" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">BMI</span>
+                        <input type="number" name="bmi" class="form-control" step="0.1" placeholder="Enter your BMI" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Systolic BP</span>
+                        <input type="number" name="systolicbp" class="form-control" placeholder="Enter systolic BP" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Diastolic BP</span>
+                        <input type="number" name="diastolicbp" class="form-control" placeholder="Enter diastolic BP" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Total Cholesterol</span>
+                        <input type="number" name="cholesteroltotal" class="form-control" placeholder="Enter total cholesterol" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">LDL Cholesterol</span>
+                        <input type="number" name="cholesterolldl" class="form-control" placeholder="Enter LDL cholesterol" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">HDL Cholesterol</span>
+                        <input type="number" name="cholesterolhdl" class="form-control" placeholder="Enter HDL cholesterol" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Triglycerides</span>
+                        <input type="number" name="cholesteroltriglycerides" class="form-control" placeholder="Enter triglycerides" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">MMSE Score</span>
+                        <input type="number" name="mmse" class="form-control" placeholder="Enter MMSE score" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Functional Assessment</span>
+                        <input type="number" name="functionalassessment" class="form-control" placeholder="Enter Functional Assessment" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">ADL</span>
+                        <input type="number" name="adl" class="form-control" placeholder="Enter ADL" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Confusion</span>
+                        <select name="confusion" class="form-control" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Disorientation</span>
+                        <select name="disorientation" class="form-control" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Personality Changes</span>
+                        <select name="personalitychanges" class="form-control" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-gap-2">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Difficulty Completing Tasks</span>
+                        <select name="difficultycompletingtasks" class="form-control" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Forgetfulness</span>
+                        <select name="forgetfulness" class="form-control" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+Comparison of AI models for Early Detection and Prevention of Alzheimer's Disease
+
+Enter Problem Statement/ Description:
+
+Alzheimer’s disease is often diagnosed at later stages, making early detection and prevention crucial for improving patient outcomes. Traditional diagnostic methods lack accuracy in detecting early-stage Alzheimer’s. This project aims to utilize AI-driven techniques, such as machine learning, to enhance early detection by analyzing medical data and identifying patterns. Additionally, AI will be used to develop personalized prevention strategies, helping to mitigate disease progression before cognitive decline becomes severe.
+
+Any Existing Technology related to Problem statement:
+
+AI-driven neuroimaging analysis detects early brain changes in Alzheimer’s using MRI and PET scans. Machine learning models analyze biomarkers and genetic data for early diagnosis, while wearable sensors monitor cognitive functions to detect early symptoms. Additionally, AI-based risk prediction models assess patient data to predict Alzheimer’s risk and suggest preventive strategies.
+
+Mention the research gap that the proposed Project/idea/research work intends to fill.
+
+While various machine learning models have been applied to Alzheimer’s detection, there is a lack of comprehensive comparison between multimodal approaches that integrate different data types (e.g., imaging, biomarkers, and cognitive tests). This project aims to fill this gap by comparing the effectiveness of different multimodal machine learning models in enhancing early detection and prevention strategies.
+
+What Novelty/Newness/upgradation do you see in the proposed Project/idea/research work by the student(s)?
+
+The proposed project introduces a novel approach by comparing multimodal machine learning models that integrate diverse data sources (e.g., neuroimaging, biomarkers, and cognitive data) for Alzheimer’s detection and prevention. This comprehensive comparison of different models is expected to reveal insights into which approaches provide the most accurate and early diagnosis, offering an innovative improvement over single-modality methods.
+
+Objectives 
+
+Preprocess multimodal data for Alzheimer’s detection.
+Apply and train multiple machine learning models.
+Compare the accuracy of different models to determine the most effective one.
